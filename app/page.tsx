@@ -10,17 +10,31 @@ import { rooms } from "@/data/rooms";
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
+  const [activeCategory, setActiveCategory] =
+    useState("Todos");
+
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 1000);
   }, []);
 
+  const filteredRooms = rooms.filter((room) => {
+    if (activeCategory === "Todos") {
+      return true;
+    }
+
+    return room.category === activeCategory;
+  });
+
   return (
     <main className="p-4 max-w-6xl mx-auto">
       <Navbar />
 
-      <CategoryFilters />
+      <CategoryFilters
+        active={activeCategory}
+        setActive={setActiveCategory}
+      />
 
       <h1 className="text-3xl font-bold mb-6">
         Clon de Airbnb
@@ -32,7 +46,7 @@ export default function Home() {
         </p>
       ) : (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {rooms.map((room) => (
+          {filteredRooms.map((room) => (
             <RoomCard
               key={room.id}
               room={room}
