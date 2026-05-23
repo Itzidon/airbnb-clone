@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import CategoryFilters from "@/components/CategoryFilters";
 import RoomCard from "@/components/RoomCard";
+import Footer from "@/components/Footer";
 import { rooms } from "@/data/rooms";
 
 export default function Home() {
@@ -39,6 +40,8 @@ export default function Home() {
           ))}
         </div>
       )}
+
+      <Footer />
     </main>
   );
 }
