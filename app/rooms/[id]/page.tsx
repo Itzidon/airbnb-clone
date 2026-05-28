@@ -2,59 +2,55 @@
 
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
-import RoomCard from "@/components/RoomCard";
 import { rooms } from "@/data/rooms";
 
-export default function CatalogPage() {
-  const [sort, setSort] = useState("asc");
-
-  const sortedRooms = [...rooms].sort((a, b) =>
-    sort === "asc" ? a.price - b.price : b.price - a.price
-  );
+export default function RoomDetailPage() {
+  const room = rooms[0];
+  const [reserved, setReserved] = useState(false);
 
   return (
-    <main className="p-4 max-w-6xl mx-auto">
+    <main className="p-4 max-w-4xl mx-auto">
       <Navbar />
 
-      <section className="mb-8">
-        <p className="text-sm text-gray-500 mb-2">
-          Alojamientos disponibles
-        </p>
+      <img
+        src={room.image}
+        alt={room.title}
+        className="h-96 w-full object-cover rounded-2xl mb-6"
+      />
 
-        <h1 className="text-4xl font-bold mb-4">
-          Encuentra tu próxima estancia
-        </h1>
+      <h1 className="text-3xl font-bold mb-2">
+        {room.title}
+      </h1>
 
-        <p className="text-gray-600 max-w-2xl">
-          Explora casas, apartamentos y cabañas seleccionadas para tus próximas vacaciones.
-        </p>
-      </section>
+      <p className="text-gray-500 mb-2">
+        {room.location}
+      </p>
 
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8 border rounded-2xl p-4">
-        <div>
-          <p className="font-semibold">
-            {rooms.length} alojamientos encontrados
-          </p>
+      <p className="mb-6">
+        ★ {room.rating}
+      </p>
 
-          <p className="text-sm text-gray-500">
-            Ordena los resultados según tu presupuesto.
-          </p>
+      <div className="grid gap-4 md:grid-cols-2">
+        <div className="p-4 border rounded-xl">
+          Casa increíble con vistas preciosas, perfecta para vacaciones.
         </div>
 
-        <select
-          value={sort}
-          onChange={(e) => setSort(e.target.value)}
-          className="border rounded-xl px-4 py-3"
-        >
-          <option value="asc">Precio menor primero</option>
-          <option value="desc">Precio mayor primero</option>
-        </select>
-      </div>
+        <div className="p-4 border rounded-xl">
+          <p className="font-bold text-xl">
+            {room.price}€ / noche
+          </p>
 
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {sortedRooms.map((room) => (
-          <RoomCard key={room.id} room={room} />
-        ))}
+          <button
+            onClick={() => setReserved(true)}
+            className={`mt-4 w-full py-3 rounded-xl font-semibold ${
+              reserved
+                ? "bg-green-600 text-white"
+                : "bg-red-500 text-white"
+            }`}
+          >
+            {reserved ? "Reserva realizada" : "Reservar"}
+          </button>
+        </div>
       </div>
     </main>
   );
