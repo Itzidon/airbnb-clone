@@ -14,7 +14,8 @@ type Props = {
 export default function RoomCard({ room }: Props) {
   return (
     <Link href={`/rooms/${room.id}`}>
-      <div className="rounded-2xl overflow-hidden cursor-pointer">
+      <div className="rounded-2xl overflow-hidden cursor-pointer hover:scale-[1.02] transition">
+
         <img
           src={room.image}
           alt={room.title}
@@ -22,12 +23,14 @@ export default function RoomCard({ room }: Props) {
         />
 
         <div className="mt-3">
-          <div className="flex justify-between">
-            <h2 className="font-semibold">
+          <div className="flex justify-between items-center">
+            <h2 className="font-semibold text-lg">
               {room.title}
             </h2>
 
-            <span>★ {room.rating}</span>
+            <span>
+              ★ {room.rating}
+            </span>
           </div>
 
           <p className="text-gray-500">
@@ -36,11 +39,12 @@ export default function RoomCard({ room }: Props) {
 
           <p className="mt-1">
             <span className="font-bold">
-              ${room.price}
+              {room.price}€
             </span>{" "}
-            night
+            / noche
           </p>
         </div>
+
       </div>
     </Link>
   );
