@@ -6,7 +6,7 @@ export default function Footer() {
       </p>
 
       <p className="mt-2 text-sm">
-        Built with Next.js and Tailwind CSS
+        Proyecto creado con Next.js y Tailwind CSS
       </p>
     </footer>
   );
