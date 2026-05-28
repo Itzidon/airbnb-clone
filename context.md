@@ -1,16 +1,16 @@
-# Airbnb Clone Context
+Airbnb Clone Context
 
 ## Project Overview
 
-This project is a mobile-first Airbnb clone built with Next.js 16, TypeScript and Tailwind CSS.
+This project is a mobile-first Airbnb clone built with Next.js 16, TypeScript, and Tailwind CSS.
 
-The application has three pages:
+The application includes three main pages:
 
-- Home page (/)
-- Catalog page (/catalog)
-- Room detail page (/rooms/[id])
+* Home page (/)
+* Catalog page (/catalog)
+* Room detail page (/rooms/[id])
 
-The goal is to recreate the Airbnb user experience using reusable React components.
+The goal of the project is to recreate a simplified Airbnb user experience using reusable React components and responsive design.
 
 ---
 
@@ -18,25 +18,24 @@ The goal is to recreate the Airbnb user experience using reusable React componen
 
 The home page contains:
 
-- Navigation bar
-- Search bar
-- Category filters
-- Room cards grid
+* Navigation bar
+* Search bar
+* Category filters
+* Room cards grid
 
-Users can search and explore rooms.
+Users can explore rooms and filter them by category.
 
 ---
 
 ## Catalog Page
 
-The catalog page shows search results.
+The catalog page displays all available rooms.
 
-It contains:
+It includes:
 
-- Results header
-- Sorting options
-- Room cards
-- Map placeholder
+* Results header
+* Sorting options
+* Room cards grid
 
 Users can sort rooms by price.
 
@@ -46,29 +45,35 @@ Users can sort rooms by price.
 
 The room detail page contains:
 
-- Photo gallery
-- Room information
-- Host information
-- Amenities section
-- Reservation card
+* Large room image
+* Room information
+* Description section
+* Reservation card
 
-Users can view room details and simulate a booking.
+Users can view room details and simulate a reservation.
 
 ---
 
 ## Main Components
 
-- Navbar
-- SearchBar
-- CategoryFilters
-- RoomCard
-- PhotoGallery
-- ReservationCard
+* Navbar
+* CategoryFilters
+* RoomCard
+* Footer
+
+---
+
+## Technologies Used
+
+* Next.js
+* TypeScript
+* Tailwind CSS
+* React
 
 ---
 
 ## Target User
 
-The target user is someone looking for vacation rentals in a simple and mobile-friendly interface.
+The target user is someone looking for vacation rentals through a simple, modern, and mobile-friendly interface.
 
-The user wants to explore rooms, view details and simulate a reservation experience.
+The user can explore rooms, filter categories, view detailed information, and simulate bookings.
