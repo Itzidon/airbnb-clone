@@ -1,7 +1,7 @@
 export const rooms = [
   {
     id: "1",
-    title: "Casa de la playa",
+    title: "Casa frente al mar",
     location: "Mallorca, España",
     price: 120,
     rating: 4.8,
@@ -11,7 +11,7 @@ export const rooms = [
   },
   {
     id: "2",
-    title: "Apartamento en la ciudad",
+    title: "Apartamento moderno",
     location: "Barcelona, España",
     price: 95,
     rating: 4.6,
@@ -21,7 +21,7 @@ export const rooms = [
   },
   {
     id: "3",
-    title: "Cabaña de la Montaña",
+    title: "Cabaña en la montaña",
     location: "Pirineos, España",
     price: 140,
     rating: 4.9,
