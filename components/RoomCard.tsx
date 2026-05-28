@@ -14,7 +14,7 @@ type Props = {
 export default function RoomCard({ room }: Props) {
   return (
     <Link href={`/rooms/${room.id}`}>
-      <div className="rounded-2xl overflow-hidden cursor-pointer hover:scale-[1.02] transition">
+      <div className="rounded-2xl overflow-hidden cursor-pointer hover:scale-[1.02] hover:shadow-lg transition duration-300">
 
         <img
           src={room.image}
